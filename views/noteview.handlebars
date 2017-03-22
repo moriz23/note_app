@@ -1,0 +1,15 @@
+<h1>Quick Notes</h1>
+{{#each notes}}
+  <pre>
+    <form action="/update/{{ id }}" method="post">
+      {{id}}. <input type="text" value="{{note}}" name="note"> <small>({{date}})</small>
+      <a href="/delete/{{ id }}">delete</a>
+      <button type="submit">Update</button>
+    </form>
+  </pre>
+{{/each}}
+
+<form action="/" method="post">
+  <textarea name="notedata" rows="8" cols="40"></textarea>
+  <button type="submit">Save Note!</button>
+</form>
